@@ -1,0 +1,45 @@
+// Place all the styles related to the dreams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+form {
+  margin: 25px 50px!important;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Playfair Display', serif!important;
+
+  & input[type='submit'] {
+    width: 20%;
+    padding: 10px;
+  }
+}
+
+.dream-text {
+  min-height: 100px;
+  min-width: 300px;
+  display: inline-block;
+  box-sizing: border-box;
+  border-style: inset;
+  border-radius: 5px;
+}
+
+table {
+  font-family: 'Raleway', sans-serif!important;
+}
+
+#privacy {
+  margin-top: 10px;
+
+  & input[type='checkbox'] {
+    margin-left: 10px;
+  }
+}
+
+#create-dream-title {
+  font-size: 25px;
+}
+
+.error {
+  border-color: red;
+  background: #fcd7d4;
+}

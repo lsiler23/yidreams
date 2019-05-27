@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import DreamsTable from '../dreams_table';
+import CreateDreamSection from './create_dream_section';
 
 class SelfDreamsBody extends Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class SelfDreamsBody extends Component {
 
   render() {
     return (
-      <DreamsTable dreams={this.props.currentUserDreams} />
+      <Fragment>
+        <CreateDreamSection />
+        <DreamsTable dreams={this.props.currentUserDreams} />
+      </Fragment>
     )
   }
 }
