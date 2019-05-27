@@ -5,7 +5,7 @@ import {
 
 export const dreamReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  console.log(action)
+
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, oldState, action.dreams);

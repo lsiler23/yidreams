@@ -31,7 +31,7 @@ export default class SessionForm extends Component {
     return (
       <div className='auth-page'>
         <div className='auth-form-box'>
-          <h3 className='auth-form-title'>{type}</h3>
+          <h3 className='auth-form-title'> {type} </h3>
             <form
               onSubmit={this.handleSubmit}
               className='auth-form'>
@@ -49,10 +49,10 @@ export default class SessionForm extends Component {
                   value={this.state.password}
                   placeholder='password'/>
               </div>
-              <button className='auth-button'>{type}</button>
+              <button className='auth-button'> {type} </button>
             </form>
             <div className='auth-redirect'>
-              <span>Need to <Link to={otherType}>{linkText}</Link> instead?</span>
+              <span>Need to <Link to={otherType}> {linkText} </Link> instead? </span>
             </div>
         </div>
       </div>

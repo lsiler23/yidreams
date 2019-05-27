@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const signup = (user) => (
   $.ajax({ method: 'post', url: '/users', data: { user } })
 );
