@@ -9,11 +9,25 @@ class SelfDreamsBody extends Component {
     super(props);
   }
 
+  renderTableOrMessage() {
+    const { currentUserDreams } = this.props;
+
+    if (currentUserDreams.length) {
+      return <DreamsTable dreams={this.props.currentUserDreams} />
+    } else {
+      return (
+        <div class='zero-state'>
+          no dreams yet!!!! go 2 slep!!
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <Fragment>
         <CreateDreamSection />
-        <DreamsTable dreams={this.props.currentUserDreams} />
+        { this.renderTableOrMessage() }
       </Fragment>
     )
   }

@@ -36,7 +36,7 @@ export const logout = () => (dispatch) => {
 };
 
 export const signup = (user) => (dispatch) => {
-  return SessionUtil.signup(user).then(payload => dispatch(receiveCurrentUser(payload));
+  return SessionUtil.signup(user).then(payload => dispatch(receiveCurrentUser(payload)));
 };
 
 // reducer
