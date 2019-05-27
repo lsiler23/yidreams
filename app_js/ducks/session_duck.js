@@ -31,11 +31,8 @@ export const login = (user) => (dispatch, getState) => {
   return SessionUtil.login(user).then(payload => dispatch(receiveCurrentUser(payload)));
 };
 
-export const logout = () => {
-  return (dispatch) => {
-    return SessionUtil.logout()
-    .then(payload => dispatch(logoutCurrentUser()));
-  };
+export const logout = () => (dispatch) => {
+  return SessionUtil.logout().then(payload => dispatch(logoutCurrentUser()));
 };
 
 export const signup = (user) => {

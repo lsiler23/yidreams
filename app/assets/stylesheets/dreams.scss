@@ -43,3 +43,24 @@ table {
   border-color: red;
   background: #fcd7d4;
 }
+
+.home-page-header {
+  display: flex!important;
+  justify-content: space-between!important;
+  & h1 {
+    font-size: 37px;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif!important;
+    color: #c2e4f9;
+    text-shadow: 0.5px 0.5px #000000;
+  }
+  & input {
+    margin-right: 50px;
+    margin-top: 25px;
+    font-family: 'Raleway', sans-serif!important;
+    border-radius: 5px;
+    &:hover {
+      background-color: #c2e4f9;
+    }
+  }
+}
