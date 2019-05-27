@@ -7,14 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let preloadedState;
 
   if (window.currentUser) {
-    const { user } = window.currentUser;
+    const { user, dreams } = window.currentUser;
     preloadedState = {
       session: {
         currentUser: user
       },
       users: {
         [user.id]: user
-      }
+      },
+      dreams
     };
 
     delete window.currentUser;
