@@ -35,14 +35,8 @@ export const logout = () => (dispatch) => {
   return SessionUtil.logout().then(payload => dispatch(logoutCurrentUser()));
 };
 
-export const signup = (user) => {
-  return (dispatch) => {
-    return SessionUtil.signup(user)
-    .then(
-      payload => dispatch(receiveCurrentUser(payload)),
-      payload => dispatch(receiveErrors(payload.responseJSON.errors))
-    );
-  };
+export const signup = (user) => (dispatch) => {
+  return SessionUtil.signup(user).then(payload => dispatch(receiveCurrentUser(payload));
 };
 
 // reducer

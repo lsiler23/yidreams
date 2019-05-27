@@ -14,7 +14,12 @@ export default class SessionForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user);
+
+    if (this.props.type === 'Log In') {
+      this.props.login(user);
+    } else {
+      this.props.signup(user);
+    }
   }
 
   handleChange(field) {
