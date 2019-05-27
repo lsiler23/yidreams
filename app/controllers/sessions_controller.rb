@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render json: { response: 'doobeedoo' }, status: 200
+
+      render 'users/show.json.jbuilder', status: 200
     else
       render json: { errors: ['Try Again'] }, status: 422
     end
