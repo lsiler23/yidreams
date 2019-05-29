@@ -25,7 +25,7 @@ class CreateDreamSection extends Component {
     };
 
     this.props.createDream({ body: dreamBody, is_private: isPrivate });
-    this.setState({ errorClass: '' });
+    this.setState({ errorClass: '', dreamBody: '' });
   }
 
   onChange(e) {
