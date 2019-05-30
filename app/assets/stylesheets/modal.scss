@@ -1,0 +1,46 @@
+.closed-modal {
+  display: none;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 10;
+  opacity: .9;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 500px;
+  min-height: 500px;
+  transform: translate(-50%, -50%);
+  background: #c2e4f9;
+  border-radius: 5px;
+
+  & h1 {
+    margin-left: 20%;
+    padding: 10px;
+  }
+
+  & textarea {
+    margin: 50px 100px 50px 100px;
+    padding: 10px;
+    min-width: 300px;
+    border-radius: 5px;
+    display: inline-block;
+    border-style: inset;
+    min-height: 100px;
+    min-width: 300px;
+  }
+}
+
+.back-button {
+  width: 20%;
+  padding: 10px;
+}

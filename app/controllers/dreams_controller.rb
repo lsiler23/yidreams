@@ -24,4 +24,19 @@ class DreamsController < ApplicationController
       render json: { errors: dream.errors }, status: 422
     end
   end
+
+  def update
+    update_params = {
+      body: params.require(:body),
+      is_private: params.require(:is_private)
+    }
+
+    dream = Dream.find(params.require(:id))
+
+    if dream.update!(update_params)
+      render json: dream, status: 200
+    else
+      render json: { errors: dream.errors }, status: 422
+    end
+  end
 end

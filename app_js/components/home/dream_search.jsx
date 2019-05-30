@@ -27,8 +27,9 @@ class DreamSearch extends Component {
     return (
       <div>
         <input
+          className='search-bar'
           type='text'
-          placeholder='Find or start a channel'
+          placeholder='Look 4 a dream maybe!'
           onChange={this.handleChange} />
       </div>
     );

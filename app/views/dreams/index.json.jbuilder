@@ -1,1 +1,1 @@
-json.dreams @dreams, :body, :is_private, :created_at
+json.dreams @dreams, :id, :body, :is_private, :created_at

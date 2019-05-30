@@ -18,6 +18,7 @@ class CreateDreamSection extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     const { dreamBody, isPrivate } = this.state;
     if (dreamBody === '') {
       this.setState({ errorClass: 'error' });

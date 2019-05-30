@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table';
 
 import { dateAndTime } from '../../util/helper_fns';
 
+import DreamRowBody from './dream_row_body';
+
 export default class DreamsTable extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ export default class DreamsTable extends Component {
       return (
         <tr>
           <td> { dateAndTime(dream.created_at) } </td>
-          <td> { dream.body } </td>
+          <DreamRowBody dream={dream} />
         </tr>
       )
     })
