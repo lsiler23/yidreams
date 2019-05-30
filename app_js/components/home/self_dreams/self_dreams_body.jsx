@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import DreamsTable from '../dreams_table';
 import CreateDreamSection from './create_dream_section';
+import DreamSearch from '../dream_search';
 
 class SelfDreamsBody extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class SelfDreamsBody extends Component {
     return (
       <Fragment>
         <CreateDreamSection />
+        <DreamSearch />
         { this.renderTableOrMessage() }
       </Fragment>
     )

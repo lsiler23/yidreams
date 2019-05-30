@@ -5,3 +5,11 @@ export const createDream = ({ body, is_private }) => (
     data: { body, is_private }
   })
 );
+
+export const queryDreams = (query) => (
+  $.ajax({
+    url: '/dreams',
+    dataType: 'json',
+    data: { query }
+  })
+);

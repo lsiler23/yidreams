@@ -1,6 +1,15 @@
 class DreamsController < ApplicationController
-
   before_action :require_login
+
+  def index
+    query = params[:query]
+
+    if query.present?
+      @dreams = Dream.where(author_id: @current_user.id).where('body ~ ?', query)
+    else
+      @dreams = Dream.all
+    end
+  end
 
   def create
     body = params.require(:body)
@@ -9,7 +18,7 @@ class DreamsController < ApplicationController
 
     dream = Dream.new(body: body, author_id: author_id, is_private: is_private)
 
-    if dream.save!
+    if dream.save
       render json: dream, status: 200
     else
       render json: { errors: dream.errors }, status: 422
