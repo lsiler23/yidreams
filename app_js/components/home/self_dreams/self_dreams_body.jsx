@@ -14,7 +14,7 @@ class SelfDreamsBody extends Component {
     const { currentUserDreams } = this.props;
 
     if (currentUserDreams.length) {
-      return <DreamsTable dreams={this.props.currentUserDreams} />
+      return <DreamsTable dreams={currentUserDreams} />
     } else {
       return (
         <div class='zero-state'>

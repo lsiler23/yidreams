@@ -13,7 +13,7 @@ export default class DreamsTable extends Component {
   renderDreamRows() {
     const { dreams } = this.props;
 
-    return dreams.map(dream => {
+    return dreams.reverse().map(dream => {
       return (
         <tr>
           <td> { dateAndTime(dream.created_at) } </td>

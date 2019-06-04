@@ -50,6 +50,7 @@ class DreamsController < ApplicationController
       Dream.handle_decryption(encrypted_dream)
     else
       dream.save
+      dream
     end
   end
 end

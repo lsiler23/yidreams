@@ -45,15 +45,15 @@ export const getAllOtherDreams = () => (dispatch) => {
   return ApiUtil.getOtherDreams().then(payload => dispatch(receiveAllOtherDreams(payload)));
 };
 
-export const dreamReducer = (oldState = {}, action) => {
+export const dreamReducer = (oldState = { currentUserDreams: [], otherUserDreams: [] }, action) => {
   Object.freeze(oldState);
 
   switch(action.type) {
     case RECEIVE_DREAM:
-      const allDreams = oldState.slice(0).concat(action.dream);
+      const allDreams = oldState.currentUserDreams.slice(0).concat(action.dream);
       return Object.assign({}, oldState, { currentUserDreams: allDreams });
     case RECEIVE_UPDATED_DREAM:
-      const currentDreams = oldState.slice(0);
+      const currentDreams = oldState.currentUserDreams.slice(0);
       const updatedDreams = replaceDream(currentDreams, action.dream);
       return Object.assign({}, oldState, { currentUserDreams: updatedDreams });
     case RECEIVE_QUERIED_DREAMS:
