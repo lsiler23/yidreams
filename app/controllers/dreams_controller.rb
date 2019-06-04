@@ -7,7 +7,7 @@ class DreamsController < ApplicationController
     if query.present?
       @dreams = Dream.where(author_id: @current_user.id).where('body ~ ?', query)
     else
-      @dreams = Dream.all
+      @dreams = Dream.where.not(author_id: @current_user.id).where(is_private: false)
     end
   end
 

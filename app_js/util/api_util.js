@@ -21,3 +21,10 @@ export const queryDreams = (query) => (
     data: { query }
   })
 );
+
+export const getOtherDreams = () => (
+  $.ajax({
+    url: '/dreams',
+    dataType: 'json'
+  })
+);

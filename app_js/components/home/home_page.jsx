@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
-import SelfDreamsBody from './self_dreams/self_dreams_body';
 import HomeHeader from './home_header';
+import SelfDreamsBody from './self_dreams/self_dreams_body';
+import OtherDreamsBody from './other_dreams_body';
 
 class HomePage extends Component {
   render() {
@@ -19,7 +20,7 @@ class HomePage extends Component {
             <SelfDreamsBody />
           </Tab>
           <Tab eventKey='their-dreams' title={otherTab}>
-            <h1>SUP BB</h1>
+            <OtherDreamsBody />
           </Tab>
         </Tabs>
       </Fragment>

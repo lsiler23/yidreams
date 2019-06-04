@@ -35,5 +35,5 @@ class SelfDreamsBody extends Component {
   }
 }
 
-const msp = state => ({ currentUserDreams: state.dreams || [] });
+const msp = state => ({ currentUserDreams: state.dreams.currentUserDreams || [] });
 export default connect(msp)(SelfDreamsBody);
