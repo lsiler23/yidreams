@@ -26,9 +26,9 @@ export default class DreamsTable extends Component {
 
   render() {
     return (
-      <Table striped variant hover>
+      <Table striped variant hover className='dreams-table'>
         <thead>
-          <th>Date</th>
+          <th width='200px'>Date</th>
           <th>Dream</th>
         </thead>
         <tbody> { this.renderDreamRows() } </tbody>

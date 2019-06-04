@@ -88,3 +88,13 @@ table {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
+.dreams-table {
+  table-layout: fixed;
+
+  & td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
