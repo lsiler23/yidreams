@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
       users: {
         [user.id]: user
       },
-      dreams
+      dreams: {
+        currentUserDreams: dreams
+      }
     };
 
     delete window.currentUser;
