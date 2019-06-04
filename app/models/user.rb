@@ -16,6 +16,16 @@ class User < ApplicationRecord
     SecureRandom::urlsafe_base64
   end
 
+  def decrypt_all_dreams
+    dreams.map do |dream|
+      if dream[:is_private]
+        Dream.handle_decryption(dream)
+      else
+        dream
+      end
+    end
+  end
+
   def reset_session_token!
     self.session_token = User.generate_session_token
     self.save!

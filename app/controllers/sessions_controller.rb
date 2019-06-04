@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def create
     @user = User.find_by_creds(
       params[:user][:username],
@@ -7,8 +8,8 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user)
-
-      render 'users/show.json.jbuilder', status: 200
+      
+      render 'users/show.json.jbuilder'
     else
       render json: { errors: ['Try Again'] }, status: 422
     end
