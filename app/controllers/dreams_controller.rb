@@ -4,8 +4,15 @@ class DreamsController < ApplicationController
   def index
     query = params[:query]
 
-    if query.present?
-      @dreams = Dream.where(author_id: @current_user.id).where('body ~ ?', query)
+    if query.present? || query.blank?
+      current_dreams = current_user.decrypt_all_dreams
+      @dreams = []
+
+      current_dreams.each do |d|
+        body = d.try(:body) || d[:body]
+        @dreams << d if body.include?(query)
+      end
+      @dreams
     else
       @dreams = Dream.where.not(author_id: @current_user.id).where(is_private: false)
     end

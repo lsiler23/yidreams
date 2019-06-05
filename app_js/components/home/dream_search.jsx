@@ -7,18 +7,18 @@ class DreamSearch extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { query: '' };
+    this.state = { query: '', hasChanged: false };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e) {
+  handleChange(e) {    
     const { queryDreams } = this.props;
 
     if (this.timeOut) {
       clearTimeout(this.timeOut)
     }
 
-    this.setState({ query: e.currentTarget.value }, () => {
+    this.setState({ hasChanged: true, query: e.currentTarget.value }, () => {
       this.timeOut = setTimeout(() => queryDreams(this.state.query), 300)
     });
   }
