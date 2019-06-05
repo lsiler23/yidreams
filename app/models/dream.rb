@@ -42,4 +42,28 @@ class Dream < ApplicationRecord
       end
     end
   end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      hash_row = row.to_h
+      updated_hash = {}
+
+      hash_row.map do |k, v|
+        new_key = k.downcase.split(' ').join('_')
+        new_key = 'author_id' if new_key == 'author'
+
+        updated_hash[new_key] = v
+      end
+
+      new_dream = Dream.new(updated_hash)
+
+      if updated_hash['is_private'] == 'true'
+        encrypted_dream = Dream.handle_encryption(new_dream)
+        Dream.handle_decryption(encrypted_dream)
+      else
+        new_dream.save
+        new_dream
+      end
+    end
+  end
 end

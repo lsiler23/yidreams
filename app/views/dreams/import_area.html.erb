@@ -1,0 +1,5 @@
+<%= form_tag import_dreams_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag 'gimme import' %>
+<% end %>
+<%= link_to 'back!!!', '/#/dreams' %>

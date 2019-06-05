@@ -48,6 +48,15 @@ class DreamsController < ApplicationController
     end
   end
 
+  def import
+    Dream.import(params[:file])
+    redirect_to '/#/dreams'
+  end
+
+  def import_area
+    render 'dreams/import_area.html.erb'
+  end
+
   private
 
   def create_new_dream(dream)
