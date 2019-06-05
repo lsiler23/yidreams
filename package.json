@@ -40,6 +40,10 @@
   "bugs": {
     "url": "https://github.com/lsiler23/yidreams/issues"
   },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "6.9.0"
+  },
   "homepage": "https://github.com/lsiler23/yidreams#readme",
   "devDependencies": {}
 }
