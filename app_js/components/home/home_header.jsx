@@ -24,8 +24,8 @@ class HomeHeader extends Component {
       <header class='home-page-header'>
         <h1> {`${this.props.username}'s dreams`} </h1>
         <div>
-          <a href='/dreams/import_area'> { 'take me to import!' } </a>
-          <a href='/dreams/export'> { 'export!' } </a>
+          <a className='imp-ex' href='/dreams/import_area'> { 'take me to import!' } </a>
+          <a className='imp-ex' href='/dreams/export'> { 'export!' } </a>
           <input
             type='submit'
             value='byeeeee'

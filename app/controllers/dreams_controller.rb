@@ -4,7 +4,9 @@ class DreamsController < ApplicationController
   def index
     query = params[:query]
 
-    if query.present? || query.blank?
+    if query.nil?
+      @dreams = Dream.where.not(author_id: current_user.id).where(is_private: false)
+    else
       current_dreams = current_user.decrypt_all_dreams
       @dreams = []
 
@@ -13,8 +15,6 @@ class DreamsController < ApplicationController
         @dreams << d if body.include?(query)
       end
       @dreams
-    else
-      @dreams = Dream.where.not(author_id: @current_user.id).where(is_private: false)
     end
   end
 
