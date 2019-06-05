@@ -8,20 +8,28 @@ class HomeHeader extends Component {
     super(props);
 
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleExport = this.handleExport.bind(this);
   }
 
   handleLogout() {
     this.props.logout();
   }
 
+  handleExport() {
+    this.props.exportDreams();
+  }
+
   render() {
     return (
       <header class='home-page-header'>
         <h1> {`${this.props.username}'s dreams`} </h1>
-        <input
-          type='submit'
-          value='byeeeee'
-          onClick={this.handleLogout} />
+        <div>
+          <a href='/dreams/export'> { 'export!' } </a>
+          <input
+            type='submit'
+            value='byeeeee'
+            onClick={this.handleLogout} />
+        </div>
       </header>
     )
   }

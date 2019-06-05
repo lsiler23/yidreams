@@ -98,3 +98,13 @@ table {
     white-space: nowrap;
   }
 }
+
+a {
+  margin-right: 50px;
+  margin-top: 25px;
+  font-family: 'Raleway', sans-serif!important;
+  border-radius: 5px;
+  &:hover {
+    background-color: #c2e4f9;
+  }
+}

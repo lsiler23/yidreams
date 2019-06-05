@@ -42,6 +42,12 @@ class DreamsController < ApplicationController
     end
   end
 
+  def export
+    respond_to do |format|
+      format.csv { send_data Dream.to_csv(current_user) }
+    end
+  end
+
   private
 
   def create_new_dream(dream)
