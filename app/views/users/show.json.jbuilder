@@ -4,3 +4,4 @@ json.set! :user do
 end
 
 json.dreams current_user.decrypt_all_dreams, :id, :body, :is_private, :created_at
+json.friends current_user.friends, :id, :username

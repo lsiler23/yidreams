@@ -44,4 +44,8 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= User.generate_session_token
   end
+
+  def friends
+    User.where(id: self.friend_ids)
+  end
 end

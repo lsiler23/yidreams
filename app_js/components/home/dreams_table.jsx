@@ -6,10 +6,6 @@ import { dateAndTime } from '../../util/helper_fns';
 import DreamRowBody from './dream_row_body';
 
 export default class DreamsTable extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderDreamRows() {
     const { dreams } = this.props;
 

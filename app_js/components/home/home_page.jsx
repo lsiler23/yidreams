@@ -8,9 +8,18 @@ import SelfDreamsBody from './self_dreams/self_dreams_body';
 import OtherDreamsBody from './other_dreams_body';
 
 class HomePage extends Component {
+  renderFriendTabs() {
+    const { friends } = this.props;
+
+    friends.map((friend) => return (
+      <Tab eventKey={`${friend.username}-tab`} title={`${friend.username}'s`}>
+        <OtherDreamsBody />
+      </Tab>
+    ));
+  }
+
   render() {
     const { currentUser: { username } } = this.props;
-    const otherTab = username === 'laurette' ? "Yi's" : "Laurette's"
 
     return (
       <Fragment>
@@ -19,14 +28,12 @@ class HomePage extends Component {
           <Tab eventKey='self-dreams' title="Yours">
             <SelfDreamsBody />
           </Tab>
-          <Tab eventKey='their-dreams' title={otherTab}>
-            <OtherDreamsBody />
-          </Tab>
+          { this.renderFriendTabs() }
         </Tabs>
       </Fragment>
     )
   }
 }
 
-const msp = state => ({ currentUser: state.session.currentUser || {}});
+const msp = state => ({ currentUser: state.session.currentUser || {}, friends: state.users.friends || [] });
 export default connect(msp)(HomePage);

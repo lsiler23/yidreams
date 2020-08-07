@@ -7,13 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let preloadedState;
 
   if (window.currentUser) {
-    const { user, dreams } = window.currentUser;
+    const { user, dreams, friends } = window.currentUser;
     preloadedState = {
       session: {
         currentUser: user
       },
       users: {
-        [user.id]: user
+        [user.id]: user,
+        friends
       },
       dreams: {
         currentUserDreams: dreams

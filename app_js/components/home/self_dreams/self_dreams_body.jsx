@@ -6,10 +6,6 @@ import CreateDreamSection from './create_dream_section';
 import DreamSearch from '../dream_search';
 
 class SelfDreamsBody extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderTableOrMessage() {
     const { currentUserDreams } = this.props;
 
